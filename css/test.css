@@ -1,0 +1,113 @@
+body {
+  background: #020617;
+  color: white;
+  font-family: monospace;
+  padding: 20px;
+}
+
+textarea {
+  width: 100%;
+  background: black;
+  color: white;
+}
+
+button {
+  margin: 5px;
+  padding: 10px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+pre {
+  background: black;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.nav-buttons {
+  margin-top: 20px;
+}
+
+.nav-buttons button {
+  margin: 5px;
+  padding: 10px 15px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.nav-buttons button:hover {
+  background: #334155;
+}
+
+.back-btn {
+  margin-bottom: 15px;
+  padding: 8px 14px;
+  background: #334155;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background: #475569;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  h1, h2, h3 {
+    font-size: 18px;
+  }
+
+  .code-box {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  textarea {
+    font-size: 14px;
+    padding: 10px;
+    min-height: 150px;
+  }
+
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .nav-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .back-btn {
+    width: 100%;
+  }
+}
+
+.code-box, pre {
+  overflow-x: auto;
+}
+
+button {
+  min-height: 44px;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+}

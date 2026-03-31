@@ -1,0 +1,103 @@
+body {
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  font-family: monospace;
+}
+
+.menu a {
+  display: block;
+  margin: 20px;
+  padding: 15px;
+  background: #1e293b;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  h1, h2, h3 {
+    font-size: 18px;
+  }
+
+  .code-box {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  textarea {
+    font-size: 14px;
+    padding: 10px;
+    min-height: 150px;
+  }
+
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .nav-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .back-btn {
+    width: 100%;
+  }
+}
+
+button {
+  min-height: 44px;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  font-family: monospace;
+  padding: 20px;
+}
+
+.menu {
+  max-width: 400px;
+  margin: auto;
+}
+
+.menu a {
+  display: block;
+  margin: 12px 0;
+  padding: 15px;
+  background: #1e293b;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
+}
+
+.menu a:hover {
+  background: #334155;
+  transform: scale(1.03);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu a {
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+
