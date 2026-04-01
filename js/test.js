@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
+let language = localStorage.getItem("language") || "c";
 
+let currentProblems = (language === "python") ? pythonProblems : problems;
   // =========================
   // INITIAL SETUP
   // =========================
 
   let currentProblemIndex = 0;
-  let problem = problems[currentProblemIndex];
+  let problem = currentProblems[currentProblemIndex];
 
   const userCode = document.getElementById("userCode");
   const resultDiv = document.getElementById("result");
@@ -16,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function loadProblem(index) {
     currentProblemIndex = index;
-    problem = problems[index];
+    problem = currentProblems[index];
     localStorage.setItem("lastProblemIndex", index);
 
     document.getElementById("problem").innerHTML = `
@@ -32,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function nextProblem() {
-    if (currentProblemIndex < problems.length - 1) {
+    if (currentProblemIndex < currentProblems.length - 1) {
       loadProblem(currentProblemIndex + 1);
     }
   }
@@ -48,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (buttons.length < 2) return;
 
     buttons[0].disabled = currentProblemIndex === 0;
-    buttons[1].disabled = currentProblemIndex === problems.length - 1;
+    buttons[1].disabled = currentProblemIndex === currentProblems.length - 1;
   }
 
   // =========================

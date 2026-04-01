@@ -6,15 +6,40 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="problem-container" id="problemContainer"></div>
+
 <button onclick="window.location.href='index.html'">⬅ Back</button>
-<script src="js/select.js"></script>
 
 <h2>Switch Language</h2>
 
-<button>C (Current)</button>
-<button disabled>Python (Coming Soon)</button>
+<button id="btnC" onclick="setLang('c')">C</button>
+<button id="btnPython" onclick="setLang('python')">Python</button>
+<button disabled>C++ (Coming Soon)</button>
 <button disabled>Java (Coming Soon)</button>
+<button disabled>JavaScript (Coming Soon)</button>
+
+<script>
+function setLang(lang) {
+  localStorage.setItem("language", lang);
+  location.reload(); // refresh page to update UI
+}
+
+function highlightCurrentLang() {
+  let current = localStorage.getItem("language") || "c";
+
+  if (current === "c") {
+    document.getElementById("btnC").innerText = "C (Current)";
+    document.getElementById("btnC").disabled = true;
+  }
+
+  if (current === "python") {
+    document.getElementById("btnPython").innerText = "Python (Current)";
+    document.getElementById("btnPython").disabled = true;
+  }
+}
+
+// run when page loads
+highlightCurrentLang();
+</script>
 
 </body>
 </html>

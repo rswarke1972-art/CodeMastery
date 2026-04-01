@@ -1,9 +1,11 @@
 // =========================
 // INITIAL SETUP
 // =========================
+let language = localStorage.getItem("language") || "c";
 
+let currentProblems = (language === "python") ? pythonProblems : problems;
 let currentProblemIndex = 0;
-let problem = problems[currentProblemIndex];
+let problem = currentProblems[currentProblemIndex];
 let correctCode = problem.solution;
 let currentIndex = 0;
 
@@ -16,7 +18,7 @@ const userInput = document.getElementById("userInput");
 
 function loadProblem(index) {
   currentProblemIndex = index;
-  problem = problems[index];
+  problem = currentProblems[index];
   correctCode = problem.solution;
   localStorage.setItem("lastProblemIndex", index);
 
@@ -41,7 +43,7 @@ function loadProblem(index) {
 // =========================
 
 function nextProblem() {
-  if (currentProblemIndex < problems.length - 1) {
+  if (currentProblemIndex < currentProblems.length - 1) {
     loadProblem(currentProblemIndex + 1);
   }
 }
@@ -56,7 +58,7 @@ function updateNavButtons() {
   const [prevBtn, nextBtn] = document.querySelectorAll(".nav-buttons button");
 
   prevBtn.disabled = currentProblemIndex === 0;
-  nextBtn.disabled = currentProblemIndex === problems.length - 1;
+  nextBtn.disabled = currentProblemIndex === currentProblems.length - 1;
 }
 
 // =========================
