@@ -1,21 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Select Problem</title>
+  <title>Select Problem - CodeMastery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/select.css">
 </head>
+
 <body>
 
-<button onclick="window.location.href='index.html'">⬅ Back</button>
+<div class="container">
 
-<h2>Select Problem</h2>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+    <h2>Select Problem</h2>
+  </div>
 
-<div class="problem-container" id="problemContainer"></div>
+  <!-- Problem List -->
+  <div id="problemContainer" class="problem-list"></div>
+
+</div>
 
 <script src="data/problems.js"></script>
 <script src="data/pythonProblems.js"></script>
 <script src="js/select.js"></script>
+
+<script>
+function goBack() {
+  window.location.href = "index.html";
+}
+</script>
 
 </body>
 </html>

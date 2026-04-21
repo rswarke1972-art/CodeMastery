@@ -1,25 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Test Mode</title>
+  <title>Test Mode - CodeMastery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/test.css">
 </head>
+
 <body>
-<button class="back-btn" onclick="goBack()">⬅ Back to Menu</button>
-<h2>Test Mode</h2>
 
-<div id="problem"></div>
+<div class="container">
 
-<textarea id="userCode" rows="10" cols="50"></textarea>
-<br><br>
-<button onclick="checkCode()">Check</button>
-<pre id="outputBox"></pre>
-<div id="result"></div>
-<div id="explanation"></div>
-<div class="nav-buttons">
-  <button onclick="prevProblem()">⬅ Previous</button>
-  <button onclick="nextProblem()">Next ➡</button>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+    <h2>Test Mode</h2>
+  </div>
+
+  <!-- Problem -->
+  <div class="card problem-card">
+    <div id="problem"></div>
+  </div>
+
+  <!-- Code Input -->
+  <div class="card input-card">
+    <h4>⌨️ Your Code</h4>
+    <textarea id="userCode" placeholder="Write your code here..."></textarea>
+  </div>
+
+  <!-- Actions -->
+  <div class="actions">
+    <button class="check-btn" onclick="checkCode()">Check Code</button>
+  </div>
+
+  <!-- Output -->
+  <div class="card output-card">
+    <h4>🖥 Output</h4>
+    <pre id="outputBox"></pre>
+  </div>
+
+  <!-- Result -->
+  <div class="card result-card">
+    <h4>📊 Result</h4>
+    <div id="result"></div>
+  </div>
+
+  <!-- Explanation -->
+  <div class="card explanation-card">
+    <h4>📖 Explanation</h4>
+    <div id="explanation"></div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav-buttons">
+    <button onclick="prevProblem()">⬅ Previous</button>
+    <button onclick="nextProblem()">Next ➡</button>
+  </div>
+
 </div>
 
 <script src="data/problems.js"></script>

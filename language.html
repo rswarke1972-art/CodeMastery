@@ -1,44 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Switch Language</title>
+  <title>Switch Language - CodeMastery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Main UI style -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Page-specific style -->
+  <style>
+    .container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .lang-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      padding: 18px;
+      margin: 12px 0;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: 0.25s;
+      border-left: 4px solid transparent;
+    }
+
+    .lang-card:hover {
+      transform: scale(1.02);
+      background: #1e293b;
+    }
+
+    .lang-name {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .current {
+      color: #22c55e;
+      font-size: 14px;
+    }
+
+    .disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .purple { border-left-color: #a855f7; }
+    .blue { border-left-color: #3b82f6; }
+    .gray { border-left-color: #64748b; }
+  </style>
 </head>
+
 <body>
 
-<button onclick="window.location.href='index.html'">⬅ Back</button>
+<div class="container">
 
-<h2>Switch Language</h2>
+  <div class="top-bar">
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+    <h2>Switch Language</h2>
+  </div>
 
-<button id="btnC" onclick="setLang('c')">C</button>
-<button id="btnPython" onclick="setLang('python')">Python</button>
-<button disabled>C++ (Coming Soon)</button>
-<button disabled>Java (Coming Soon)</button>
-<button disabled>JavaScript (Coming Soon)</button>
+  <div id="langContainer"></div>
+
+</div>
 
 <script>
-function setLang(lang) {
-  localStorage.setItem("language", lang);
-  location.reload(); // refresh page to update UI
-}
+const languages = [
+  { name: "C", value: "c", color: "purple" },
+  { name: "Python", value: "python", color: "blue" },
+  { name: "C++ (Coming Soon)", disabled: true, color: "gray" },
+  { name: "Java (Coming Soon)", disabled: true, color: "gray" },
+  { name: "JavaScript (Coming Soon)", disabled: true, color: "gray" }
+];
 
-function highlightCurrentLang() {
-  let current = localStorage.getItem("language") || "c";
+const container = document.getElementById("langContainer");
+const currentLang = localStorage.getItem("language") || "c";
 
-  if (current === "c") {
-    document.getElementById("btnC").innerText = "C (Current)";
-    document.getElementById("btnC").disabled = true;
+languages.forEach(lang => {
+  const card = document.createElement("div");
+  card.className = `lang-card ${lang.color}`;
+
+  if (lang.disabled) card.classList.add("disabled");
+
+  let label = `<span class="lang-name">${lang.name}</span>`;
+
+  if (lang.value === currentLang) {
+    label += `<span class="current">✔ Current</span>`;
   }
 
-  if (current === "python") {
-    document.getElementById("btnPython").innerText = "Python (Current)";
-    document.getElementById("btnPython").disabled = true;
+  card.innerHTML = label;
+
+  if (!lang.disabled && lang.value !== currentLang) {
+    card.onclick = () => {
+      localStorage.setItem("language", lang.value);
+      location.reload();
+    };
   }
+
+  container.appendChild(card);
+});
+
+function goBack() {
+  window.location.href = "index.html";
 }
 
-// run when page loads
-highlightCurrentLang();
+
 </script>
 
 </body>

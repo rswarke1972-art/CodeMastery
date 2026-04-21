@@ -1,109 +1,170 @@
+/* ===== GLOBAL ===== */
 body {
-  background: #0f172a;
+  margin: 0;
+  background: radial-gradient(circle at top, #0f172a, #020617);
   color: white;
-  text-align: center;
-  font-family: monospace;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-button:disabled {
-  background: #475569;
-  cursor: not-allowed;
-  opacity: 0.7;
+body::before {
+  content: "";
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(168,85,247,0.2), transparent);
+  top: -100px;
+  left: -100px;
+  filter: blur(100px);
 }
 
-.menu a {
-  display: block;
-  margin: 20px;
-  padding: 15px;
-  background: #1e293b;
-  border-radius: 10px;
-  text-decoration: none;
-  color: white;
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-
-  body {
-    padding: 10px;
-  }
-
-  h1, h2, h3 {
-    font-size: 18px;
-  }
-
-  .code-box {
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  textarea {
-    font-size: 14px;
-    padding: 10px;
-    min-height: 150px;
-  }
-
-  button {
-    width: 100%;
-    margin: 5px 0;
-  }
-
-  .nav-buttons {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .back-btn {
-    width: 100%;
-  }
-}
-
-button {
-  min-height: 44px;
-}
-
-textarea {
-  width: 100%;
-  resize: vertical;
-}
-
-body {
-  background: #0f172a;
-  color: white;
-  text-align: center;
-  font-family: monospace;
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 500px;
+  margin: auto;
   padding: 20px;
 }
 
-.menu {
-  max-width: 400px;
-  margin: auto;
+/* ===== TITLE ===== */
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 5px;
 }
 
-.menu a {
-  display: block;
-  margin: 12px 0;
-  padding: 15px;
-  background: #1e293b;
-  border-radius: 10px;
+.title span {
+  color: #a855f7;
+}
+
+.subtitle {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+/* ===== MENU ===== */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ===== CARD ===== */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px;
+  border-radius: 16px;
   text-decoration: none;
   color: white;
-  transition: 0.2s;
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transition: 0.3s;
 }
 
-.menu a:hover {
-  background: #334155;
-  transform: scale(1.03);
+/* ICON */
+.card span {
+  font-size: 28px;
 }
 
-/* Mobile */
+/* TEXT */
+.card h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 25px rgba(168,85,247,0.4);
+}
+
+/* ===== COLORS ===== */
+.purple { border-left: 4px solid #a855f7; }
+.blue   { border-left: 4px solid #3b82f6; }
+.green  { border-left: 4px solid #22c55e; }
+.orange { border-left: 4px solid #f59e0b; }
+.cyan   { border-left: 4px solid #06b6d4; }
+.pink   { border-left: 4px solid #ec4899; }
+
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  .menu a {
-    padding: 14px;
-    font-size: 14px;
+  .title {
+    font-size: 26px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .card h2 {
+    font-size: 16px;
+  }
+
+  .card p {
+    font-size: 12px;
   }
 }
 
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(168,85,247,0.3), transparent);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.arrow {
+  margin-left: auto;
+  font-size: 18px;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.card:hover .arrow {
+  transform: translateX(6px);
+  opacity: 1;
+}
+
+.card:active {
+  transform: scale(0.97);
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.back-btn {
+  background: #1e293b;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.25s;
+}
+
+.back-btn:hover {
+  background: #334155;
+  transform: scale(1.05);
+}

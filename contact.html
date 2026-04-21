@@ -1,25 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Contact</title>
+  <meta charset="UTF-8">
+  <title>Contact - CodeMastery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .contact-card {
+      background: #0f172a;
+      padding: 25px;
+      border-radius: 16px;
+      border-left: 4px solid #ec4899;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      background: #020617;
+      color: white;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    .send-btn {
+      width: 100%;
+      padding: 12px;
+      background: #1e293b;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .send-btn:hover {
+      background: #334155;
+    }
+
+    #status {
+      margin-top: 10px;
+    }
+
+    .top-bar {
+  max-width: 500px;
+  margin: 20px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.back-btn {
+  background: #1e293b;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: #334155;
+  transform: scale(1.05);
+}
+  </style>
 </head>
+
 <body>
 
-<button class="back-btn" onclick="window.location.href='index.html'">⬅ Back</button>
 
-<h2>Contact Us</h2>
 
-<div class="contact-box">
-  <p>
-    💡 New ideas, suggestions, and collaborations are always welcome.
-  </p>
+<div class="container">
 
-  <p>
-    📧 Email: <strong>rswarke1972@gmail.com</strong>
-  </p>
+  <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+  <div class="contact-card">
+    <h2>💬 Contact Us</h2>
+    <p>Send feedback or suggestions 👇</p>
+
+    <!-- ✅ NO inline JS -->
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+
+      <button type="submit" class="send-btn">Send Message</button>
+    </form>
+
+    <p id="status"></p>
+  </div>
+
 </div>
+
+<!-- ✅ 1. EMAILJS FIRST -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<!-- ✅ 2. INIT -->
+<script>
+  (function(){
+    emailjs.init("WOOkqRSQ0vMflbWWI"); // your key
+  })();
+</script>
+
+<script>
+function goBack() {
+  if (history.length > 1) {
+    history.back();   // go to previous page
+  } else {
+    window.location.href = "index.html"; // fallback
+  }
+}
+</script>
+
+<!-- ✅ 3. YOUR LOGIC -->
+<script src="js/contact.js"></script>
 
 </body>
 </html>

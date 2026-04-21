@@ -1,22 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>How to Use</title>
+  <title>How to Use - CodeMastery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/howto.css">
 </head>
+
 <body>
 
-<button onclick="window.location.href='index.html'">⬅ Back</button>
+<div class="container">
 
-<h2>How to Use</h2>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+    <h2>How to Use</h2>
+  </div>
 
-<p>Practice Mode: Type code and learn step-by-step. The blur code above reveals letter by letter as user type input, it's letter come in white color for incorrect match and green for correct one</p>
-<p>Test Mode: Solve problems independently. Good Luck</p>
-<p>Output will be displayed in test mode only when the code is fully correct</p>
-<p>After clicking back and after entering the mode the user gets on the problem he ends with</p>
-<p>Select problem would comes in both Practice and Test Modes</p>
-<p>Hope you all will enjoy this website. Happy Learning :)</p>
+  <!-- Intro -->
+  <div class="card intro-card">
+    <h3>🚀 Welcome to CodeMastery</h3>
+    <p>Practice. Test. Master. Repeat.</p>
+  </div>
+
+  <!-- Practice Mode -->
+  <div class="card purple">
+    <h3>💻 Practice Mode</h3>
+    <p>
+      Type code and learn step-by-step. The blurred solution reveals 
+      letter-by-letter as you type.
+    </p>
+    <ul>
+      <li>🟢 Correct characters turn <span class="green">green</span></li>
+      <li>⚪ Wrong characters stay white</li>
+      <li>👀 Helps you learn syntax precisely</li>
+    </ul>
+  </div>
+
+  <!-- Test Mode -->
+  <div class="card blue">
+    <h3>📋 Test Mode</h3>
+    <p>Solve problems independently without hints.</p>
+    <ul>
+      <li>🎯 No step-by-step guidance</li>
+      <li>✅ Output shown only when correct</li>
+      <li>🏁 Simulates real coding tests</li>
+    </ul>
+  </div>
+
+  <!-- Navigation Info -->
+  <div class="card green">
+    <h3>🔁 Progress System</h3>
+    <ul>
+      <li>📌 Your last problem is saved automatically</li>
+      <li>🔙 Returning continues from where you left</li>
+      <li>📚 Works in both Practice & Test modes</li>
+    </ul>
+  </div>
+
+  <!-- Problem Selection -->
+  <div class="card orange">
+    <h3>🧩 Problem Selection</h3>
+    <p>
+      Choose problems manually or continue sequentially in both modes.
+    </p>
+  </div>
+
+  <!-- Closing -->
+  <div class="card pink">
+    <h3>✨ Final Note</h3>
+    <p>
+      Stay consistent. Focus on accuracy.  
+      <br><br>
+      <strong>Happy Learning 🚀</strong>
+    </p>
+  </div>
+
+</div>
+
+<script>
+function goBack() {
+  window.location.href = "index.html";
+}
+</script>
 
 </body>
 </html>

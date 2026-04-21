@@ -1,28 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Practice Mode</title>
+  <meta charset="UTF-8">
+  <title>Practice Mode - CodeMastery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/practice.css">
 </head>
-<body>
-<button class="back-btn" onclick="goBack()">⬅ Back to Menu</button>
-<h2>Practice Mode</h2>
 
-<div id="problem"></div>
-<pre id="outputBox"></pre>
-<div id="codeDisplay" class="code-box"></div>
-<div id="explanation"></div>
-<div class="nav-buttons">
-  <button onclick="prevProblem()">⬅ Previous</button>
-  <button onclick="nextProblem()">Next ➡</button>
+<body>
+
+<div class="container">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+    <h2>Practice Mode</h2>
+  </div>
+
+  <!-- PROBLEM -->
+  <div class="card problem-card">
+    <h3 id="problem">Loading problem...</h3>
+    <p id="description"></p>
+  </div>
+
+  <!-- SOLUTION -->
+  <div class="card code-card">
+    <h4>💡 Solution</h4>
+    <pre id="outputBox"></pre>
+    <div id="codeDisplay" class="code-box"></div>
+  </div>
+
+  <!-- USER INPUT -->
+  <div class="card input-card">
+    <h4>⌨️ Your Code</h4>
+    <textarea id="userInput" placeholder="// Write your code here..."></textarea>
+  </div>
+
+    <!-- EXPLANATION -->
+  <div class="card explanation-card">
+    <h4>📖 Explanation</h4>
+    <div id="explanation"></div>
+  </div>
+
+  
+  <!-- NAVIGATION -->
+  <div class="nav-buttons">
+    <button onclick="prevProblem()">⬅ Previous</button>
+    <button onclick="nextProblem()">Next ➡</button>
+  </div>
+
 </div>
 
-<textarea id="userInput" rows="6" placeholder="Start typing code here..."></textarea>
-
+<!-- JS FILES -->
 <script src="data/problems.js"></script>
 <script src="data/pythonProblems.js"></script>
 <script src="js/practice.js"></script>
+
+<!-- BACK BUTTON FUNCTION -->
+<script>
+function goBack() {
+  window.location.href = "index.html";
+}
+</script>
 
 </body>
 </html>

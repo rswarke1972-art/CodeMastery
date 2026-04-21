@@ -32,51 +32,44 @@ body {
   background: #334155;
 }
 
-/* ===== LIST ===== */
-.problem-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* ===== CARD ===== */
-.problem-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* ===== CARDS ===== */
+.card {
   background: linear-gradient(145deg, #0f172a, #020617);
-  padding: 16px;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: 0.2s;
-  border-left: 4px solid #6366f1;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
-.problem-card:hover {
-  transform: scale(1.02);
-  background: #1e293b;
+.intro-card {
+  text-align: center;
 }
 
-/* Number */
-.problem-index {
-  font-weight: bold;
-  color: #a5b4fc;
-  margin-right: 10px;
+/* Accent colors */
+.purple { border-left: 4px solid #a855f7; }
+.blue   { border-left: 4px solid #3b82f6; }
+.green  { border-left: 4px solid #22c55e; }
+.orange { border-left: 4px solid #f59e0b; }
+.pink   { border-left: 4px solid #ec4899; }
+
+/* List styling */
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
 }
 
-/* Title */
-.problem-title {
-  flex: 1;
+li {
+  margin-bottom: 8px;
 }
 
-/* Arrow */
-.arrow {
-  opacity: 0.6;
+/* Highlight */
+.green {
+  color: #22c55e;
 }
 
-/* ===== MOBILE ===== */
+/* Mobile */
 @media (max-width: 768px) {
-  .problem-card {
-    padding: 14px;
+  button {
+    width: 100%;
   }
 }

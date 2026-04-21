@@ -1,16 +1,119 @@
+/* ===== GLOBAL ===== */
 body {
-  background: #020617;
-  color: white;
-  font-family: monospace;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e2e8f0;
+  font-family: 'Segoe UI', monospace;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 900px;
+  margin: auto;
   padding: 20px;
 }
 
-.code-box {
-  background: black;
-  padding: 20px;
+/* ===== TOP BAR ===== */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.top-bar h2 {
+  font-size: 22px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: linear-gradient(145deg, #0f172a, #020617);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(99,102,241,0.3);
+}
+
+/* ===== HEADINGS ===== */
+h3, h4 {
+  margin-bottom: 10px;
+  color: #f1f5f9;
+}
+
+/* ===== CODE BOX ===== */
+.code-box, pre {
+  background: #020617;
+  padding: 15px;
   border-radius: 10px;
-  margin-top: 20px;
+  overflow-x: auto;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ===== TEXTAREA ===== */
+textarea {
+  width: 100%;
+  min-height: 180px;
+  background: #020617;
+  color: #22c55e;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 12px;
+  font-family: monospace;
+  font-size: 15px;
+}
+
+textarea:focus {
+  outline: none;
+  border: 1px solid #6366f1;
+  box-shadow: 0 0 10px rgba(99,102,241,0.4);
+}
+
+/* ===== BUTTONS ===== */
+button {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* ===== NAV BUTTONS ===== */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+  background: #1e293b;
+}
+
+.back-btn:hover {
+  background: #334155;
+}
+
+/* ===== SPECIAL COLORS (optional glow accents) ===== */
+.problem-card { border-left: 4px solid #8b5cf6; }
+.code-card { border-left: 4px solid #22c55e; }
+.explanation-card { border-left: 4px solid #3b82f6; }
+.input-card { border-left: 4px solid #f59e0b; }
+
+.code-box {
   white-space: pre-wrap;
+  font-family: monospace;
 }
 
 .blur {
@@ -19,102 +122,11 @@ body {
 }
 
 .correct {
-  color: #22c55e;
+  color: #22c55e; /* green */
+  filter: none;
 }
 
-textarea {
-  width: 100%;
-  background: black;
+.wrong {
   color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  font-family: monospace;
-  font-size: 16px;
-  margin-top: 20px;
-}
-
-.nav-buttons {
-  margin-top: 20px;
-}
-
-.nav-buttons button {
-  margin: 5px;
-  padding: 10px 15px;
-  background: #1e293b;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.nav-buttons button:hover {
-  background: #334155;
-}
-
-.back-btn {
-  margin-bottom: 15px;
-  padding: 8px 14px;
-  background: #334155;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.back-btn:hover {
-  background: #475569;
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-
-  body {
-    padding: 10px;
-  }
-
-  h1, h2, h3 {
-    font-size: 18px;
-  }
-
-  .code-box {
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  textarea {
-    font-size: 14px;
-    padding: 10px;
-    min-height: 150px;
-  }
-
-  button {
-    width: 100%;
-    margin: 5px 0;
-  }
-
-  .nav-buttons {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .back-btn {
-    width: 100%;
-  }
-}
-
-.code-box, pre {
-  overflow-x: auto;
-}
-
-button {
-  min-height: 44px;
-}
-
-textarea {
-  width: 100%;
-  resize: vertical;
+  filter: none;
 }

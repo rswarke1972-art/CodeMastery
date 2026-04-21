@@ -1,41 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>CodeMastery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<h1><!DOCTYPE html>
-<html>
-<head>
-  <title>CodeMastery</title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+<div class="container">
 
-<h1>💻 CodeMastery 💻</h1>
+  <h1 class="title">💻 Code<span>Mastery</span></h1>
+  <p class="subtitle">Practice. Test. Master. Repeat.</p>
 
-<div class="menu">
+  <div class="menu">
 
-  <a href="practice.html">Practice Mode</a>
-  <a href="test.html">Test Mode</a>
+  <a href="practice.html" class="card purple">
+    <span>💻</span>
+    <div>
+      <h2>Practice Mode</h2>
+      <p>Solve problems and improve your skills</p>
+    </div>
+    <div class="arrow">➜</div>
+  </a>
 
-  <a href="howto.html">How to Use</a>
-  <a href="select.html">Select Problem</a>
-  <a href="language.html">Switch Language</a>
-  <a href="contact.html">Contact Us</a>
+  <a href="test.html" class="card blue">
+    <span>📋</span>
+    <div>
+      <h2>Test Mode</h2>
+      <p>Evaluate your performance</p>
+    </div>
+    <div class="arrow">➜</div>
+  </a>
 
-  <script>
+  <a href="howto.html" class="card green">
+    <span>📖</span>
+    <div>
+      <h2>How to Use</h2>
+      <p>Learn how to use CodeMastery</p>
+    </div>
+    <div class="arrow">➜</div>
+  </a>
+
+  <a href="select.html" class="card orange">
+    <span>🧩</span>
+    <div>
+      <h2>Select Problem</h2>
+      <p>Choose coding problems</p>
+    </div>
+    <div class="arrow">➜</div>
+  </a>
+
+  <a href="language.html" class="card cyan">
+    <span>💻</span>
+    <div>
+      <h2>Switch Language</h2>
+      <p>Change programming language</p>
+    </div>
+    <div class="arrow">➜</div>
+  </a>
+
+  <a href="contact.html" class="card pink">
+    <span>✉️</span>
+    <div>
+      <h2>Contact Us</h2>
+      <p>Support or feedback</p>
+    </div>
+    <div class="arrow">➜</div>
+  </a>
+
+</div>
+
+</div>
+
+<script>
 function selectLang(lang) {
   localStorage.setItem("language", lang);
   window.location.href = "select.html";
 }
 </script>
-
-</div>
 
 </body>
 </html>
